@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load the trained Random Forest model
-model = pickle.load(open("D:\\ML\\remaning\\best_model.pkl", "rb"))
+model = pickle.load(open("best_model.pkl", "rb"))
 
 st.title("🚗 Car Price Prediction (CarDekho)")
 st.write("Enter car details to predict the selling price.")
@@ -28,4 +28,5 @@ if st.button("Predict Price"):
     }])
     
     pred = model.predict(input_df)[0]
+
     st.success(f"💰 Estimated Selling Price: ₹ {pred:,.0f}")
